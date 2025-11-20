@@ -12,16 +12,10 @@ body {
     color: #ffffff;
     font-family: "Golos Text", sans-serif;
     font-weight: normal;
-    font-size: 120px;
-    line-height: 100%;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
-    text-align: center;
 }
 
 .container {
     max-width: 1670px;
-    width: 100%;
     margin: 0 auto;
     padding: 0 10px;
     overflow: hidden;
@@ -30,6 +24,7 @@ body {
 .hero {
     padding: 165px 0;
     background-color: #000000;
+    text-align: center;
 }
 
 .hero__title {
@@ -46,10 +41,11 @@ body {
 .hero__text {
     margin-bottom: 110px;
     font-weight: 400;
-    line-height: 1;
+    text-align: center;
+    font-size: 120px;
+    line-height: 100%;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-    text-align: center;
 }
 
 .hero__img-wrapper {
@@ -62,4 +58,61 @@ body {
 .hero__img {
     height: 100%;
     object-fit: cover;
+}
+
+.hero__btn-wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btn {
+    position: relative;
+    padding: 24px 56px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+}
+
+.btn:before,
+.btn:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    transition: border-color 0.3s ease;
+}
+
+.btn:before {
+    left: -24px;
+    bottom: 0;
+    border-right: 24px solid #ffffff;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+}
+.btn:after {
+    right: -24px;
+    bottom: 0;
+    border-left: 24px solid #ffffff;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+}
+
+.btn:hover:before {
+    border-right-color: rgba(255, 255, 255, 0.5);
+}
+.btn:hover:after {
+    border-left-color: rgba(255, 255, 255, 0.5);
 }
