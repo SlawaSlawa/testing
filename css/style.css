@@ -61,9 +61,21 @@ body {
 }
 
 .hero__btn-wrapper {
+    position: relative;
     max-width: 1920px;
     margin: 0 auto;
     text-align: center;
+}
+.hero__btn-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
 .btn {
@@ -80,10 +92,12 @@ body {
     color: #000000;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 20;
 }
 .btn:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(128, 128, 128);
     color: #ffffff;
+    z-index: 20;
 }
 
 .btn:before,
@@ -93,6 +107,7 @@ body {
     width: 0;
     height: 0;
     transition: border-color 0.3s ease;
+    z-index: 20;
 }
 
 .btn:before {
@@ -111,8 +126,155 @@ body {
 }
 
 .btn:hover:before {
-    border-right-color: rgba(255, 255, 255, 0.5);
+    border-right-color: rgb(128, 128, 128);
+    z-index: 20;
 }
 .btn:hover:after {
-    border-left-color: rgba(255, 255, 255, 0.5);
+    border-left-color: rgb(128, 128, 128);
+    z-index: 20;
+}
+
+/* ------------------@MEDIA------------------ */
+
+@media (max-width: 1024px) {
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+    .hero__title {
+        margin-bottom: 54px;
+    }
+    .hero__text {
+        margin-bottom: 90px;
+        font-size: 80px;
+    }
+    .hero__img-wrapper {
+        height: 57px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .hero__title {
+        margin-bottom: 40px;
+    }
+    .hero__text {
+        margin-bottom: 80px;
+        font-size: 60px;
+    }
+    .hero__img-wrapper {
+        height: 43px;
+    }
+    .btn {
+        padding: 20px;
+        font-size: 20px;
+    }
+    .btn:before {
+        border-right: 24px solid #ffffff;
+        border-top: 36px solid transparent;
+        border-bottom: 36px solid transparent;
+    }
+    .btn:after {
+        border-left: 24px solid #ffffff;
+        border-top: 36px solid transparent;
+        border-bottom: 36px solid transparent;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .hero__text {
+        margin-bottom: 60px;
+        font-size: 40px;
+    }
+    .hero__img-wrapper {
+        height: 28px;
+    }
+    .btn {
+        padding: 18px;
+        font-size: 18px;
+    }
+    .btn:before {
+        border-top: 34px solid transparent;
+        border-bottom: 34px solid transparent;
+    }
+    .btn:after {
+        border-top: 34px solid transparent;
+        border-bottom: 34px solid transparent;
+    }
+}
+
+@media (max-width: 425px) {
+    .hero__btn-wrapper::before {
+        height: 1px;
+    }
+    .btn {
+        padding: 16px;
+        font-size: 16px;
+    }
+    .btn:before {
+        border-top: 32px solid transparent;
+        border-bottom: 32px solid transparent;
+    }
+    .btn:after {
+        border-top: 32px solid transparent;
+        border-bottom: 32px solid transparent;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .hero__text {
+        margin-bottom: 40px;
+        font-size: 40px;
+    }
+    .hero__img-wrapper {
+        height: 28px;
+    }
+    .btn {
+        padding: 14px;
+        font-size: 14px;
+    }
+    .btn:before {
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+    }
+    .btn:after {
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+    }
+}
+
+@media (max-width: 350px) {
+    .hero {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .hero__text {
+        font-size: 30px;
+    }
+    .hero__img-wrapper {
+        height: 21px;
+    }
+    .btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+    .btn:before {
+        border-top: 28px solid transparent;
+        border-bottom: 28px solid transparent;
+    }
+    .btn:after {
+        border-top: 28px solid transparent;
+        border-bottom: 28px solid transparent;
+    }
 }
